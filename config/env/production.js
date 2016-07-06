@@ -35,6 +35,12 @@ module.exports = {
       }
     }
   },
+  instagram: {
+    clientID: '31e9c68445a84489b4a9501b3ad40817',
+    clientSecret: '730c6a642d0d4e4f97f9b69a84e8b1a6',
+    callbackURL: '/api/auth/instagram/callback',
+    sandbox: true
+  },
   facebook: {
     clientID: process.env.FACEBOOK_ID || 'APP_ID',
     clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',

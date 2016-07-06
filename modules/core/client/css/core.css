@@ -35,3 +35,11 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+
+/*Header Style*/
+.instagram-logo {
+  min-height: 80px;
+  max-height: 80px;
+  margin-right: 15px;
+  padding:5px;
+}
