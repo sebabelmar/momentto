@@ -54,15 +54,17 @@ a:hover .header-profile-image {
 
 .home-article{
   margin-top: 10px;
-  width: 381px;
+  width: 380px;
+  background-color: #fff;
+  border-radius: 1%;
 }
 
 .article-width{
-  width: 381px;
+  width: 379px;
 }
 
-#article-video{
-  width: 380px;
+.article-video{
+  width: 378px;
 }
 
 .article-border{
@@ -73,11 +75,28 @@ a:hover .header-profile-image {
   border-bottom: 1px solid #e1e0e0;
 }
 
-#article-avatar{
-  width: 50px;
+.article-avatar{
+  width: 45px;
   border-radius: 50%;
-  margin: 5px;
+  margin: 5px 5px 5px -10px;
+  border: 1px solid #e1e0e0;
 }
+
+.header{
+  height: 60px;
+}
+
+.user-info p{
+  margin: 17px 0 0 7px;
+}
+
+.time p{
+  margin: 17px 0 0 0px;
+  float: right;
+  color: #8f8f8f;
+}
+
+
 
 /*header img{*/
   /*float: left;*/
