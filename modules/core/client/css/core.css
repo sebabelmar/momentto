@@ -1,3 +1,7 @@
+body{
+  background-color: #f5f5f5;
+}
+
 .content {
   margin-top: 50px;
 }
@@ -52,8 +56,16 @@ a:hover .header-profile-image {
   padding:5px;
 }
 
+/*Article*/
+article {
+  /*margin-left: auto;*/
+  margin: 0 auto;
+}
+
+
+
 .home-article{
-  margin-top: 10px;
+  margin-top: 30px;
   width: 380px;
   background-color: #fff;
   border-radius: 1%;
@@ -91,17 +103,32 @@ a:hover .header-profile-image {
 }
 
 .time p{
-  margin: 17px 0 0 0px;
+  margin: 17px 0 10px -15px;
   float: right;
   color: #8f8f8f;
 }
 
+.footer-margin{
+  margin: 0 0 0 20px;
+}
 
+.footer .row{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
-/*header img{*/
-  /*float: left;*/
-/*}*/
+.footer .row p {
+  margin: 0 0 10px -25px;
+  color: #8f8f8f;
+}
 
-/*header p  {*/
-  /*float: right;*/
-/*}*/
+.footer .row i {
+  color: #fc6060;
+  font-size: 17px;
+}
+
+.footer hr{
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
