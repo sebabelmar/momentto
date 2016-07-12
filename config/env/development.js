@@ -35,8 +35,8 @@ module.exports = {
     title: defaultEnvConfig.app.title + ' - Development Environment'
   },
 	instagram: {
-		clientID: '31e9c68445a84489b4a9501b3ad40817',
-		clientSecret: '730c6a642d0d4e4f97f9b69a84e8b1a6',
+		clientID: process.env.INSTAGRAM_ID,
+		clientSecret: process.env.INSTAGRAM_SECRET,
 		callbackURL: '/api/auth/instagram/callback',
 		sandbox: true
 	},
