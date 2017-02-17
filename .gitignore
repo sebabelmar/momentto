@@ -29,6 +29,7 @@ _site/
 
 # General
 # =======
+*.env
 *.log
 *.csv
 *.dat
