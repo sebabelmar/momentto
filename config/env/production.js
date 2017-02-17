@@ -36,8 +36,8 @@ module.exports = {
     }
   },
   instagram: {
-    clientID: '31e9c68445a84489b4a9501b3ad40817',
-    clientSecret: '730c6a642d0d4e4f97f9b69a84e8b1a6',
+    clientID: '2b089c3e792e413e83df3a594320373c',
+    clientSecret: '334f72a9c0244727b2856ce3981df41c',
     callbackURL: '/api/auth/instagram/callback',
     sandbox: true
   },
