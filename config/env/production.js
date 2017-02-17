@@ -37,7 +37,7 @@ module.exports = {
   },
   instagram: {
     clientID: process.env.INSTAGRAM_ID,
-    clientSecret: process.env.INSTAGRAM_ID,
+    clientSecret: process.env.INSTAGRAM_SECRET,
     callbackURL: '/api/auth/instagram/callback',
     sandbox: true
   },
