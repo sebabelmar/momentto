@@ -19,9 +19,7 @@ module.exports = function (grunt) {
         NODE_ENV: 'test'
       },
       dev: {
-        NODE_ENV: 'development',
-        INSTAGRAM_ID: '',
-        INSTAGRAM_SECRET: ''
+        NODE_ENV: 'development'
       },
       prod: {
         NODE_ENV: 'production'
