@@ -132,3 +132,10 @@ article {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+/*Added*/
+.glyphicon-cloud-download{
+  color: #c2d2f0;
+  margin-top: 12px;
+  font-size: 23px;
+}

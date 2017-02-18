@@ -29,6 +29,13 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
+      <li>
+				<span>
+					<a href="" ng-click="getPicsYo()">
+					  <i class="glyphicon glyphicon-cloud-download"></i>
+					</a>
+				</span>
+      </li>
       <li class="dropdown" dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
           <img ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />

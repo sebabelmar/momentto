@@ -8,6 +8,9 @@ var picturesPolicy = require('../policies/pictures.server.policy'),
 
 module.exports = function(app) {
   // Pictures Routes
+  app.route('/api/picture/import_pictures').all(picturesPolicy.isAllowed)
+    .get(pictures.loadMedia);
+
   app.route('/api/pictures').all(picturesPolicy.isAllowed)
     .get(pictures.list)
     .post(pictures.create);

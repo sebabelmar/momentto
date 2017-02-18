@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var path = require('path'),
+  request = require('request'),
   mongoose = require('mongoose'),
   Picture = mongoose.model('Picture'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
@@ -114,4 +115,75 @@ exports.pictureByID = function(req, res, next, id) {
     req.picture = picture;
     next();
   });
+};
+
+/**
+ * Send User's pics
+ */
+exports.loadMedia = function(req, res){
+    // https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=
+    var user_info = req.user.providerData;
+    var url =  "https://api.instagram.com/v1/users/" + user_info.id + "/media/recent/?access_token=" + user_info.accessToken;
+
+    console.log(user_info);
+    request(url, function (error, response, body) {
+
+        if (!error && response.statusCode == 200) {
+            var instagramPics = JSON.parse(body);
+            var user_id = req.param('user_id');
+            console.log("user_id");
+
+            iterateOverResponse(instagramPics.data, user_id)
+            return res.json(200)
+        }else{
+            console.log(error);
+            console.log("algo anda mal!");
+        }
+    })
+};
+
+var iterateOverResponse = function(collection, userId){
+    for( var i = 0; i < collection.length; i++ ) {
+        saveMedia(collection[i], userId);
+    }
+}
+
+var saveMedia = function(media, userId){
+    console.log(media)
+    var createdAt = new Date(media.created_time*1000)
+    if(media.type == 'image'){
+        var lowResUrl = media.images.low_resolution.url;
+        var thumbnail = media.images.thumbnail.url;
+        var standardUrl = media.images.standard_resolution.url;
+        var videoStandardUrl = '';
+        var videoLowUrl = '';
+
+    }else{
+        var lowResUrl = media.images.low_resolution.url;
+        var thumbnail = media.images.thumbnail.url;
+        var standardUrl = media.images.standard_resolution.url;
+        var videoStandardUrl = media.videos.low_resolution.url;
+        var videoLowUrl = media.videos.standard_resolution.url;
+    }
+
+
+    var media = new Media ({
+        title: "Seba",
+        takenAt: createdAt,
+        tags : media.tags,
+        mediaType: media.type,
+        location: media.location,
+        imageLowResUrl: lowResUrl,
+        imageThumbnail: thumbnail,
+        imageStandardUrl: standardUrl,
+        videoStandardUrl: videoStandardUrl,
+        videoLowUrl: videoLowUrl,
+        instagramId: media.id,
+        user: mongoose.Types.ObjectId(userId)
+    });
+
+    media.save(function (err) {
+        if (err) return console.log(err);
+        // saved!
+    })
 };

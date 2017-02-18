@@ -12,12 +12,19 @@ acl = new acl(new acl.memoryBackend());
  * Invoke Pictures Permissions
  */
 exports.invokeRolesPolicies = function () {
+
+  // /api/picture/import_pictures'
   acl.allow([{
     roles: ['admin'],
     allows: [{
       resources: '/api/pictures',
       permissions: '*'
-    }, {
+    },
+    {
+      resources: '/api/picture/import_pictures',
+      permissions: '*'
+    },
+    {
       resources: '/api/pictures/:pictureId',
       permissions: '*'
     }]
@@ -26,7 +33,12 @@ exports.invokeRolesPolicies = function () {
     allows: [{
       resources: '/api/pictures',
       permissions: ['get', 'post']
-    }, {
+    },
+    {
+      resources: '/api/picture/import_pictures',
+      permissions: ['get']
+    },
+    {
       resources: '/api/pictures/:pictureId',
       permissions: ['get']
     }]
@@ -35,7 +47,12 @@ exports.invokeRolesPolicies = function () {
     allows: [{
       resources: '/api/pictures',
       permissions: ['get']
-    }, {
+    },
+    {
+      resources: '/api/picture/import_pictures',
+      permissions: ['get']
+    },
+    {
       resources: '/api/pictures/:pictureId',
       permissions: ['get']
     }]
