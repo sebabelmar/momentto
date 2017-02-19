@@ -118,7 +118,7 @@ exports.pictureByID = function(req, res, next, id) {
 };
 
 /**
- * Send User's pics
+ * Import User's pics from Instagram
  */
 exports.loadMedia = function(req, res){
     // https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=
@@ -144,11 +144,11 @@ exports.loadMedia = function(req, res){
 
 var iterateOverResponse = function(collection, userId){
     for( var i = 0; i < collection.length; i++ ) {
-        saveMedia(collection[i], userId);
+        savePicture(collection[i], userId);
     }
 };
 
-var saveMedia = function(media, userId){
+var savePicture = function(media, userId){
     console.log(media)
     var createdAt = new Date(media.created_time*1000)
     if(media.type == 'image'){
@@ -185,4 +185,28 @@ var saveMedia = function(media, userId){
     picture.save(function (err) {
         if (err) return console.log(err);
     })
+};
+
+/**
+ * Saving Picture Memory
+ */
+exports.createMemory = function(req, res) {
+    console.log("in memorie");
+
+    var picture = req.picture ;
+    console.log(picture);
+    req.param('content');
+
+    picture.memories.push({content: req.param('content')});
+
+    picture.save(function(err) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        } else {
+            console.log('Saved memory on pic...')
+            res.jsonp(picture);
+        }
+    });
 };

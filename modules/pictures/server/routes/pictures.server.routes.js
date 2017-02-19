@@ -20,6 +20,9 @@ module.exports = function(app) {
     .put(pictures.update)
     .delete(pictures.delete);
 
+  app.route('/api/pictures/:pictureId/memory').all(picturesPolicy.isAllowed)
+    .post(pictures.createMemory);
+
   // Finish by binding the Picture middleware
   app.param('pictureId', pictures.pictureByID);
 };
