@@ -198,8 +198,8 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$window',
-  function ($scope, $state, Authentication, Menus, $window) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$window','$http',
+  function ($scope, $state, Authentication, Menus, $window, $http) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
@@ -227,6 +227,18 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
       // Effectively call OAuth authentication route:
       $window.location.href = url;
     };
+
+    // Exec on LOAD
+    // Need a find a way to hit API one time.
+    $scope.importInstagramPictures = function (){
+        $http({
+            method: "GET",
+            url: "/api/picture/import"
+        }).then(function(res){
+            console.log("FROM NG:", res)
+        });
+    };
+
   }
 ]);
 
