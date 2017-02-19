@@ -1,21 +1,12 @@
 <section>
-  <div class="page-header">
-    <h1>Pictures</h1>
+  <div class="row pics-container">
+    <div class="col-lg-3 col-md-4 col-xs-6 col-seba" ng-repeat="pic in vm.pictures">
+      <a class="thumbnail-seba" ng-click="showInfoModal(pic)" href="">
+        <img class="img-responsive" src="{{pic.imageThumbnail}}" alt="">
+      </a>
+    </div>
   </div>
-  <div class="list-group">
-    <a data-ng-repeat="picture in vm.pictures"
-       data-ui-sref="pictures.view({ pictureId: picture._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span data-ng-bind="picture.created | date:'mediumDate'"></span>
-        by
-        <span data-ng-if="picture.user" data-ng-bind="picture.user.displayName"></span>
-        <span data-ng-if="!picture.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" data-ng-bind="picture.name"></h4>
-    </a>
-  </div>
+  <!--Add a import button-->
   <div class="alert alert-warning text-center" data-ng-if="vm.pictures.$resolved && !vm.pictures.length">
     No Pictures yet, why don't you <a data-ui-sref="pictures.create">create one</a>?
   </div>
