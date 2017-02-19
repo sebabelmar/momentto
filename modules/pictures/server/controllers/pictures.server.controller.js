@@ -118,7 +118,7 @@ exports.pictureByID = function(req, res, next, id) {
 };
 
 /**
- * Send User's pics
+ * Import User's pics from Instagram
  */
 exports.loadMedia = function(req, res){
     // https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=
@@ -133,24 +133,45 @@ exports.loadMedia = function(req, res){
             var user_id = req.param('user_id');
             console.log("user_id");
 
-            iterateOverResponse(instagramPics.data, req.user._id)
+            iterateOverResponse(instagramPics.data, req.user._id);
             return res.json(200)
         }else{
             console.log(error);
-            console.log("algo anda mal!");
+            console.log('algo anda mal!');
         }
     })
 };
 
+/**
+ * Saving Picture Memory
+ */
+exports.createMemory = function(req, res) {
+    var picture = req.picture ;
+    picture.memories.push({content: req.param('content')});
+
+    picture.save(function(err) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        } else {
+            res.jsonp(picture);
+        }
+    });
+};
+
+
+/**
+ * Helper functions
+ */
 var iterateOverResponse = function(collection, userId){
     for( var i = 0; i < collection.length; i++ ) {
-        saveMedia(collection[i], userId);
+        savePicture(collection[i], userId);
     }
 };
 
-var saveMedia = function(media, userId){
-    console.log(media)
-    var createdAt = new Date(media.created_time*1000)
+var savePicture = function(media, userId){
+    var createdAt = new Date(media.created_time*1000);
     if(media.type == 'image'){
         var lowResUrl = media.images.low_resolution.url;
         var thumbnail = media.images.thumbnail.url;
