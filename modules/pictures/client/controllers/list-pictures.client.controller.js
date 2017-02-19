@@ -17,9 +17,8 @@
         console.log('Scope in pictures working');
 
         var modalInstance = $modal.open({
-            // 'modules/pictures/client/views/list-pictures.client.view.html'
-            templateUrl: 'modules/pictures/client/views/media-modal.client.view.html',
-            controller: "MediaModalController",
+            templateUrl: 'modules/pictures/client/views/modal-picture.client.view.html',
+            controller: "ModalPictureController",
             size: 'lg',
             resolve: {
                 user: function(){

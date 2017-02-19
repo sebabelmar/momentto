@@ -133,15 +133,37 @@ exports.loadMedia = function(req, res){
             var user_id = req.param('user_id');
             console.log("user_id");
 
-            iterateOverResponse(instagramPics.data, req.user._id)
+            iterateOverResponse(instagramPics.data, req.user._id);
             return res.json(200)
         }else{
             console.log(error);
-            console.log("algo anda mal!");
+            console.log('algo anda mal!');
         }
     })
 };
 
+/**
+ * Saving Picture Memory
+ */
+exports.createMemory = function(req, res) {
+    var picture = req.picture ;
+    picture.memories.push({content: req.param('content')});
+
+    picture.save(function(err) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        } else {
+            res.jsonp(picture);
+        }
+    });
+};
+
+
+/**
+ * Helper functions
+ */
 var iterateOverResponse = function(collection, userId){
     for( var i = 0; i < collection.length; i++ ) {
         savePicture(collection[i], userId);
@@ -149,8 +171,7 @@ var iterateOverResponse = function(collection, userId){
 };
 
 var savePicture = function(media, userId){
-    console.log(media)
-    var createdAt = new Date(media.created_time*1000)
+    var createdAt = new Date(media.created_time*1000);
     if(media.type == 'image'){
         var lowResUrl = media.images.low_resolution.url;
         var thumbnail = media.images.thumbnail.url;
@@ -185,28 +206,4 @@ var savePicture = function(media, userId){
     picture.save(function (err) {
         if (err) return console.log(err);
     })
-};
-
-/**
- * Saving Picture Memory
- */
-exports.createMemory = function(req, res) {
-    console.log("in memorie");
-
-    var picture = req.picture ;
-    console.log(picture);
-    req.param('content');
-
-    picture.memories.push({content: req.param('content')});
-
-    picture.save(function(err) {
-        if (err) {
-            return res.status(400).send({
-                message: errorHandler.getErrorMessage(err)
-            });
-        } else {
-            console.log('Saved memory on pic...')
-            res.jsonp(picture);
-        }
-    });
 };

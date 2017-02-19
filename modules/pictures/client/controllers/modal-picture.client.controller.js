@@ -3,7 +3,7 @@
 
   angular
       .module('pictures')
-      .controller('MediaModalController', ['$scope', '$modalInstance', '$rootScope', 'pic', 'user','$http',
+      .controller('ModalPictureController', ['$scope', '$modalInstance', '$rootScope', 'pic', 'user','$http',
     function($scope, $modalInstance, $rootScope, pic, user, $http) {
 
       // Scope Variables
@@ -26,8 +26,8 @@
       // Add memories to an specific picture
       $scope.letsMemorie = function(){
         $http({
-          method: "POST",
-          url: "api/pictures/" + pic._id + "/memory",
+          method: 'POST',
+          url: 'api/pictures/' + pic._id + '/memory',
           params: {"content": $scope.content}
         });
 
