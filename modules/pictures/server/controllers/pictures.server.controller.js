@@ -133,7 +133,7 @@ exports.loadMedia = function(req, res){
             var user_id = req.param('user_id');
             console.log("user_id");
 
-            iterateOverResponse(instagramPics.data, user_id)
+            iterateOverResponse(instagramPics.data, req.user._id)
             return res.json(200)
         }else{
             console.log(error);
@@ -146,7 +146,7 @@ var iterateOverResponse = function(collection, userId){
     for( var i = 0; i < collection.length; i++ ) {
         saveMedia(collection[i], userId);
     }
-}
+};
 
 var saveMedia = function(media, userId){
     console.log(media)
@@ -167,7 +167,7 @@ var saveMedia = function(media, userId){
     }
 
 
-    var media = new Media ({
+    var picture = new Picture ({
         title: "Seba",
         takenAt: createdAt,
         tags : media.tags,
@@ -182,8 +182,7 @@ var saveMedia = function(media, userId){
         user: mongoose.Types.ObjectId(userId)
     });
 
-    media.save(function (err) {
+    picture.save(function (err) {
         if (err) return console.log(err);
-        // saved!
     })
 };

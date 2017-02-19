@@ -21,7 +21,7 @@ exports.invokeRolesPolicies = function () {
       permissions: '*'
     },
     {
-      resources: '/api/picture/import_pictures',
+      resources: '/api/picture/import',
       permissions: '*'
     },
     {
@@ -35,7 +35,7 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get', 'post']
     },
     {
-      resources: '/api/picture/import_pictures',
+      resources: '/api/picture/import',
       permissions: ['get']
     },
     {
@@ -49,7 +49,7 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     },
     {
-      resources: '/api/picture/import_pictures',
+      resources: '/api/picture/import',
       permissions: ['get']
     },
     {

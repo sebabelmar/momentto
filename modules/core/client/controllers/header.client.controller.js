@@ -30,23 +30,15 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
       $window.location.href = url;
     };
 
-    // I need to move this to the User service
-    // This hits users route and users.profile.controller
-    var loadPics = function(user_id, instagram_id, token){
-        $http({
-            method: "GET",
-            url: "/api/picture/import_pictures"
-        }).then(function(res){
-            console.log(res)
-        });
-    };
-
     // Exec on LOAD
     // Need a find a way to hit API one time.
-    $scope.getPicsYo = function (){
-        var instagram_id = user.providerData.id;
-        var token = user.providerData.accessToken;
-        loadPics(user._id, instagram_id, token);
+    $scope.importInstagramPictures = function (){
+        $http({
+            method: "GET",
+            url: "/api/picture/import"
+        }).then(function(res){
+            console.log("FROM NG:", res)
+        });
     };
 
   }
