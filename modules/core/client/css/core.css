@@ -139,3 +139,193 @@ article {
   margin-top: 12px;
   font-size: 23px;
 }
+
+
+/*Migrated form old*/
+.stage {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -50px;
+  margin-left: -70px;
+}
+
+.stage video{
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  margin-top: -190px;
+}
+
+.index {
+  position: absolute;
+  margin-left: 60%;
+  margin-top: 33%;
+  width: 33%;
+  font-weight: 100;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.index p {
+  color:#c2d2f0;
+  text-align: right;
+  margin-top: 1rem;
+  padding-top: 3.5rem;
+  margin-bottom: -1.5rem;
+}
+
+.index h3 {
+  color:#c2d2f0;
+  margin-top: -1rem;
+}
+
+.instagram-logo {
+  width: 15%;
+  padding-top: 0.5rem;
+}
+
+.icon{
+  margin-right:-26.5rem;
+}
+
+/*grid*/
+.thumbnail-seba {
+  display: block;
+  padding: 4px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.col-seba{
+  width: 150px;
+  display: inline-block;
+}
+
+.pics-container{
+  margin-top: 2%;
+  margin-left: 17%;
+  max-width: 860px;
+}
+/*end of grid*/
+
+.navbar-inverse .navbar-brand{
+  color:#c2d2f0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color:#c2d2f0;
+}
+
+.hr{
+  margin-right: 39px;
+  width: 260px;
+}
+
+
+/*Modal*/
+.imagen{
+  width: 100%;
+}
+
+.foot-fixed-bottom {
+  height: 20%;
+  bottom: 8px;
+  display: block;
+  margin-bottom: 0;
+  position: fixed;
+  z-index: 1030;
+}
+
+.memorie-form{
+
+  display: inline-flex;
+}
+
+.memorie-area{
+  border:none;
+  width: 220px;
+  height: 100px;
+}
+
+.memories-section{
+  color:#562A72;
+
+}
+
+.panel{
+  border: none;
+  width: 90%;
+}
+
+.panel-group .panel + .panel{
+  margin-top: 0px;
+}
+
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 0px;
+}
+
+.avatar{
+  margin-top: 13px;
+  width: 100%;
+  border-radius: 100px;
+}
+
+.date {
+  position: absolute;
+  margin-top: -25px;
+  margin-left: 15px;
+  font-style: italic;
+  color: #c2d2f0;
+}
+
+.glyphicon-facetime-video{
+  color:#c2d2f0;
+}
+
+.glyphicon-cloud-download{
+  color: #c2d2f0;
+  margin-top: 12px;
+  font-size: 23px;
+}
+
+.glyphicon-remove{
+  color: #c2d2f0;
+  font-size: 12px;
+}
+
+.user-name{
+  color: #c2d2f0;
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.btn{
+  border-radius: 0px;
+}
+
+.panel-title{
+  font-size: 13px;
+  color: #c2d2f0;
+}
+
+.delete-btn{
+  position: relative;
+  float: right;
+}
+
+.video{
+  color: #c2d2f0;
+  display: inline-flex;
+  margin-left: 30px;
+}
+
+.video a{
+  padding-left: 5px;
+}
