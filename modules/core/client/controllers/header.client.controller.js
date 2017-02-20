@@ -37,7 +37,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
             method: "GET",
             url: "/api/picture/import"
         }).then(function(res){
-            console.log("FROM NG:", res)
+            $window.location.reload();
         });
     };
 

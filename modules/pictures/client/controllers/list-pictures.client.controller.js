@@ -5,9 +5,9 @@
     .module('pictures')
     .controller('PicturesListController', PicturesListController);
 
-  PicturesListController.$inject = ['$scope', '$modal', 'PicturesService'];
+  PicturesListController.$inject = ['$scope', '$modal', 'PicturesService', '$http', '$window'];
 
-  function PicturesListController($scope, $modal, PicturesService) {
+  function PicturesListController($scope, $modal, PicturesService, $http, $window) {
     var vm = this;
 
     vm.pictures = PicturesService.query();
@@ -29,7 +29,17 @@
                 }
             }
         })
-    }
+    };
+
+    $scope.importInstagramPictures = function (){
+        console.log("YEAHAAA");
+      $http({
+          method: "GET",
+          url: "/api/picture/import"
+      }).then(function(res){
+          $window.location.reload();
+      });
+    };
 
   }
 })();
