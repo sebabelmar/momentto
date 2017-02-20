@@ -62,8 +62,6 @@ article {
   margin: 0 auto;
 }
 
-
-
 .home-article{
   margin-top: 30px;
   width: 380px;
@@ -133,63 +131,23 @@ article {
   margin-bottom: 5px;
 }
 
-/*Added*/
-.glyphicon-cloud-download{
-  color: #c2d2f0;
-  margin-top: 12px;
-  font-size: 23px;
-}
-
-
 /*Migrated form old*/
-.stage {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  margin-top: -50px;
-  margin-left: -70px;
+.glyphicon-cloud-download{
+  font-size: 20px;
+  padding-left: 10px;
 }
 
-.stage video{
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  margin-top: -190px;
-}
-
-.index {
-  position: absolute;
-  margin-left: 60%;
-  margin-top: 33%;
-  width: 33%;
-  font-weight: 100;
-  background: rgba(0,0,0,0.3);
-  color: white;
-  padding: 2rem;
-  font-size: 1.2rem;
-}
-
-.index p {
+.navbar-inverse .navbar-brand{
   color:#c2d2f0;
-  text-align: right;
-  margin-top: 1rem;
-  padding-top: 3.5rem;
-  margin-bottom: -1.5rem;
 }
 
-.index h3 {
+.navbar-inverse .navbar-nav > li > a {
   color:#c2d2f0;
-  margin-top: -1rem;
 }
 
-.instagram-logo {
-  width: 15%;
-  padding-top: 0.5rem;
-}
-
-.icon{
-  margin-right:-26.5rem;
+.hr{
+  margin-right: 39px;
+  width: 260px;
 }
 
 /*grid*/
@@ -212,20 +170,6 @@ article {
   max-width: 860px;
 }
 /*end of grid*/
-
-.navbar-inverse .navbar-brand{
-  color:#c2d2f0;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color:#c2d2f0;
-}
-
-.hr{
-  margin-right: 39px;
-  width: 260px;
-}
-
 
 /*Modal*/
 .imagen{
@@ -287,12 +231,6 @@ article {
 
 .glyphicon-facetime-video{
   color:#c2d2f0;
-}
-
-.glyphicon-cloud-download{
-  color: #c2d2f0;
-  margin-top: 12px;
-  font-size: 23px;
 }
 
 .glyphicon-remove{

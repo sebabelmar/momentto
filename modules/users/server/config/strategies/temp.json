@@ -1,0 +1,21 @@
+{ provider: 'instagram',
+  id: '369004168',
+  displayName: 'Seba Belmar',
+  name: { familyName: undefined, givenName: undefined },
+  username: 'sebabelmarp',
+  _raw: '{"meta": {"code": 200}, "data": {"username": "sebabelmarp", "full_name": "Seba Belmar", "website": "http://masonbottle.com", "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11809812_1482710768692159_810103925_a.jpg", "bio": "Love", "counts": {"follows": 294, "followed_by": 280, "media": 466}, "id": "369004168"}}',
+  _json:
+  { meta: { code: 200 },
+    data:
+    { username: 'sebabelmarp',
+      full_name: 'Seba Belmar',
+      website: 'http://masonbottle.com',
+      profile_picture: 'https://scontent.cdninstagram.com/t51.2885-19/11809812_1482710768692159_810103925_a.jpg',
+      bio: 'Love',
+      counts: [Object],
+      id: '369004168',
+      accessToken: '369004168.2b089c3.b8f0a8115c144ddf945c5c59343e68f1',
+      refreshToken: undefined
+    }
+  }
+}

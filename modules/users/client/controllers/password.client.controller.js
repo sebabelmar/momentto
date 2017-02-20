@@ -5,9 +5,9 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
     $scope.authentication = Authentication;
     $scope.popoverMsg = PasswordValidator.getPopoverMsg();
 
-    //If user is signed in then redirect back home
+    //If user is signed in then redirect to pictures
     if ($scope.authentication.user) {
-      $location.path('/');
+      $location.path('/pictures');
     }
 
     // Submit forgotten password account id

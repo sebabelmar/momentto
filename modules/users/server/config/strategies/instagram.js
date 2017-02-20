@@ -29,7 +29,7 @@ module.exports = function(config) {
 				username: profile.username,
 				provider: 'instagram',
 				providerIdentifierField: 'id',
-                profileImageURL: profile._json.data.profile_picture ,
+                profileImageURL: profile._json.data.profile_picture,
 				providerData: providerData
 			};
 
