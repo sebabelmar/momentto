@@ -1,4 +1,4 @@
-<section>
+<section class='ng-cloak'>
   <div class='row'>
 
     <div class='col-lg-8 col-md-8 col-xs-8'>
@@ -27,13 +27,14 @@
 
       <hr class="hr">
       <accordion close-others="oneAtATime">
-        <accordion-group  ng-repeat="memo in memories" heading="Memorie from {{memo.created | date : format : 'longDate'}}">
+        <accordion-group  ng-repeat="memo in memories" heading="{{memo.content | limitTo:20 }}...">
           <span class="delete-btn">
             <a href="" ng-click="">
               <i class="glyphicon glyphicon-remove"></i>
             </a>
           </span>
           <p>{{memo.content}}</p>
+          <p class="memory-date">{{memo.created | date : format : 'longDate'}}</p>
         </accordion-group>
       </accordion>
 
@@ -41,10 +42,9 @@
       <div class='foot-fixed-bottom'>
         <form  class="css-form memorie-form">
           <textarea class="memorie-area" type="text" required placeholder="write some memories" ng-model="content"></textarea>
-          <button class="btn" ng-click="letsMemorie()">
+          <button class="btn" ng-click="saveMemory()">
             <i class="glyphicon glyphicon-heart-empty"></i>
           </button>
-      <!--     <input type="submit" ng-click="letsMemorie()" value="" /> -->
         </form>
       </div>
 

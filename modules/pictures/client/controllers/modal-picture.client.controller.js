@@ -11,7 +11,7 @@
       $scope.memories = $scope.picture.memories;
       $scope.user = user;
 
-      // For debugging porpuses
+      // For debugging purposes
       console.log($scope.user);
       console.log($scope.memories);
 
@@ -24,7 +24,7 @@
       }
 
       // Add memories to an specific picture
-      $scope.letsMemorie = function(){
+      $scope.saveMemory = function(){
         $http({
           method: 'POST',
           url: 'api/pictures/' + pic._id + '/memory',

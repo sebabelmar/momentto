@@ -48,13 +48,6 @@ a:hover .header-profile-image {
   padding:5px;
 }
 
-/*Header Style*/
-.instagram-logo {
-  min-height: 50px;
-  max-height: 50px;
-  margin-right: 15px;
-  padding:5px;
-}
 
 /*Article*/
 article {
@@ -185,8 +178,12 @@ article {
 }
 
 .memorie-form{
-
   display: inline-flex;
+}
+
+.memory-date{
+  font-size: 10px;
+  font-style: italic;
 }
 
 .memorie-area{
@@ -197,7 +194,6 @@ article {
 
 .memories-section{
   color:#562A72;
-
 }
 
 .panel{
@@ -212,6 +208,10 @@ article {
 .panel-group .panel {
   margin-bottom: 0;
   border-radius: 0px;
+}
+
+.panel-title{
+  color: #c0c0c0 !important;
 }
 
 .avatar{
