@@ -21,12 +21,15 @@ module.exports = function(config) {
 			providerData.accessToken = accessToken;
 			providerData.refreshToken = refreshToken;
 
+			console.log('XXXXXXXX:', profile);
+
 			// Create the user OAuth profile
 			var providerUserProfile = {
 				displayName: profile.displayName,
 				username: profile.username,
 				provider: 'instagram',
 				providerIdentifierField: 'id',
+                profileImageURL: profile._json.data.profile_picture ,
 				providerData: providerData
 			};
 
